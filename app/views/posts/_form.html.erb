@@ -1,0 +1,20 @@
+<%= form_for @post do |f| %>
+  <div class="form-group <%= 'error' if @post.errors[:title].any? %>">
+    <%= f.text_field :title, :placeholder=> "Post Title", class: "form-control" %>
+  </div>
+
+  <div class="form-group <%= 'error' if @post.errors[:link].any? %>">
+    <%= f.text_field :link, :placeholder=> "Link Url", class: "form-control"  %>
+  </div>
+
+  <div class="form-group <%= 'error' if @post.errors[:user_id].any? %>">
+    <%= f.collection_select :user_id, User.all, :id, :email,{prompt: "Select Username"}, class: "form-control select" %>
+  </div>
+
+  <div>
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+
+  <%= link_to (image_tag "Home.png", width: 35, height: 35, class: "home"), :root%>
+
+<%end%>

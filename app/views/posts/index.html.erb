@@ -1,0 +1,34 @@
+
+
+<div class="wrapper-list container">
+  <h1 class="page-header"> Feddit </h1>
+  <div class= "add-post-symbol">
+    <%= link_to "New Post", :new_post, class:"btn btn-primary new" %>
+  </div>
+</div>
+<div class="container posts">
+  <ol>
+    <% @posts.each do |post| %>
+      <li>
+        <div class="votes">
+          <%= link_to (image_tag ("Fork.png"), width: 8, height:35), [:upvote, id: post.id] %>
+          <%= post.votes %>
+          <%= link_to (image_tag ("DownFork.png"), width: 8, height:35), [:downvote, id: post.id] %>
+        </div>
+        <div class="post-content">
+          <%= link_to post.title, [:post, id: post.id], class: "post-title" %>
+          <span class="post-url">(<%= truncate(post.link, length: 35) %>)</span>
+          <br>
+          <%= post.user[:email] %>
+          <br>
+          <% if current_user == post.user %>
+            <%= link_to "Edit", [:edit_post, id: post.id], class: "edit-link" %>
+            <%= link_to "Delete", [:post, id: post.id], method: 'delete', data: {confirm: 'Are you fed up with this post?'}, class: "delete-link" %>
+          <% end %>
+        </div>
+      </li>
+      <div class="post-separation">
+      </div>
+    <% end %>
+  </ol>
+</div>
