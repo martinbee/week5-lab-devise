@@ -50,6 +50,12 @@
 
 // Body sass
 
+
+.logo{
+  margin-top: 0px;
+  position: absolute;
+}
+
 .wrapper-form, .wrapper-list {
   display:flex;
   flex-flow: row wrap;
