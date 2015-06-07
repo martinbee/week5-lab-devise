@@ -177,9 +177,23 @@
       }
     }
   }
+  .logo {
+    margin-left: 10px;
+  }
+  .pull-right {
+    margin-right: 5px;
+  }
+
+
 }
 
 @media all and (max-width: 500px) {
+  .logo {
+    margin-left: 10px;
+  }
+  .pull-right {
+    margin-right: 5px;
+  }
 
   .container {
     width: 100%;

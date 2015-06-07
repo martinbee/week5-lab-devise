@@ -1,8 +1,5 @@
 class PostsController < ApplicationController
 
-
-
-
   def index
     @posts = Post.all.order('votes desc')
   end
@@ -17,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new params.require(:post).permit(:title, :link, :user_id)
+    @post.user_id = current_user.id
     if @post.save
       redirect_to :root, notice: "Post Added!"
     else
