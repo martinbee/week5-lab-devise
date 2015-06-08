@@ -127,7 +127,7 @@
     .votes {
       font-family: signika;
       float:left;
-      height: 4.5em;
+      height: 4.55em;
       margin-right: 8px;
       margin-left: 4px;
     }
@@ -179,11 +179,6 @@
   .posts {
     .post-separation {
     }
-    ol {
-      .votes {
-        height: 5em;
-      }
-    }
   }
   .logo {
     margin-left: 10px;
@@ -231,9 +226,6 @@
       width: 300px;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-    .votes {
-      height: 4.5em;
     }
   }
 
