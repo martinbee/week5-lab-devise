@@ -29,6 +29,13 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find params[:id]
+    if current_user.nil?
+      redirect_to authenticate_user!
+    elsif current_user.id == @post.user.id
+      render :edit
+    else
+      redirect_to :root
+    end
   end
 
   def update
