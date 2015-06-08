@@ -227,6 +227,11 @@
 
   ol {
     padding-left: 15px !important;
+    .post-content{
+      width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
 }

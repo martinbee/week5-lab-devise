@@ -16,7 +16,7 @@
           <%= link_to (image_tag ("DownFork.png"), width: 8, height:35), [:downvote, id: post.id] %>
         </div>
         <div class="post-content">
-          <%= link_to post.title, [:post, id: post.id], class: "post-title" %>
+          <%= link_to post.title.to_s, [:post, id: post.id], class: "post-title" %>
           <span class="post-url">(<%= truncate(post.link, length: 35) %>)</span>
           <br>
           <%= distance_of_time_in_words_to_now(post.created_at) %> by <%= post.user[:username]%>
