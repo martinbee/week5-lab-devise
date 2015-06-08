@@ -6,6 +6,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*Reset Safari User Agent Styles*/
 
 // If you ever change the background color, this code will have to change. IT'S DIRTY!
 .notice {
@@ -120,6 +121,7 @@
     width: 100%;
     padding-left: 0px;
     li {
+      -webkit-padding-start: 35px;
       margin-top: 15px;
     }
     .votes {
@@ -179,7 +181,7 @@
     }
     ol {
       .votes {
-        height: 5.5em !important;
+        height: 4em !important;
       }
     }
   }
